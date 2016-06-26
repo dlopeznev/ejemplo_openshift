@@ -1,0 +1,20 @@
+
+#1
+#runAsUser: RunAsAny
+oc edit scc restricted
+
+#2
+crearStorage.sh
+oc get pv
+
+#3
+crearClaims.sh
+oc get pvc
+
+#4
+levantarMysql.sh
+oc get svc
+
+#5
+levantarWordpress.sh
+oc get svc
