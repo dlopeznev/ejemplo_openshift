@@ -6,10 +6,8 @@ metadata:
   name: wp
 spec: 
   ports:
-    # the port that this service should serve on
     - port: 5055
       targetPort: wordpress
-  # label keys and values that must match in order to receive traffic for this service
   selector: 
     name: wordpress
   type: LoadBalancer
