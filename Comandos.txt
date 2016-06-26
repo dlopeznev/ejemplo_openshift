@@ -1,20 +1,25 @@
+#0
+chmod 775 *.sh
 
 #1
 #runAsUser: RunAsAny
 oc edit scc restricted
 
 #2
-crearStorage.sh
-oc get pv
+oc new-project wordpress --display-name="Ejemplo Wordpress" --description="Ejemplo Wordpress"
 
 #3
+crearStorage.sh
+oc get pv | grep vol
+
+#4
 crearClaims.sh
 oc get pvc
 
-#4
+#5
 levantarMysql.sh
 oc get svc
 
-#5
+#6
 levantarWordpress.sh
 oc get svc

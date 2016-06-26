@@ -8,8 +8,9 @@ mkdir -p /home/datos/vol2
 chmod -R 777 /home/datos/
 
 #Agrego a exports
-/home/datos/vol1 *(rw,sync)
-/home/datos/vol2 *(rw,sync)
+echo '/home/datos/vol1 *(rw,sync)' >> /etc/exports
+echo '/home/datos/vol2 *(rw,sync)' >> /etc/exports
+exportfs -a
 
 #Permisos SELinux
 setsebool -P virt_use_nfs 1
