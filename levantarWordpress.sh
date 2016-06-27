@@ -5,3 +5,6 @@ oc create -f pods/pod-wordpress.yaml
 
 #Creo un servicio para acceder por nombre
 oc create -f services/service-wp.yaml
+
+#Expongo el servicio
+oc expose svc wp
